@@ -1,0 +1,79 @@
+/* NavBar.css */
+
+.navbar {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  color: #333333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-item {
+  margin-right: 40px;
+}
+
+.nav-link {
+  font-size: 20px;
+  color: #e08805;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ea7f05;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  min-width: 100px;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ec770a;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Optional: Media query for responsiveness */
+@media (max-width: 768px) {
+  .navbar-nav {
+    margin-top: 10px;
+  }
+
+  .navbar-toggler {
+    margin-right: auto;
+  }
+}

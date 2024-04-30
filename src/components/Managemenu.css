@@ -1,0 +1,41 @@
+/* Managemenu.css */
+
+.managemenu-container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .managemenu-nav {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    width: 60%;
+    padding: 10px;
+  }
+  
+  .managemenu-nav-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+  }
+  
+  .managemenu-nav-item {
+    margin-right: 10px;
+  }
+  
+  .managemenu-nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .managemenu-nav-link:hover {
+    background-color: #ccc;
+  }
+  

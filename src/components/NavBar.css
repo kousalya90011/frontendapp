@@ -1,0 +1,78 @@
+/* NavBar.css */
+
+.navbar {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between; /* Add this line to align items on both ends */
+  }
+  
+  .navbar-brand {
+    font-size: 30px;
+    color: #333333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* NavBar.css */
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  list-style: none; /* Add this line to remove list styling */
+}
+
+.nav-item {
+  margin-right: 15px;
+}
+
+/* Rest of your styles remain unchanged */
+
+  .nav-link {
+    font-size: 20px;
+    color: #e08805;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #ea7f05;
+  }
+  
+  /* Optional: Add media query for responsiveness */
+  /* NavBar.css */
+
+/* ... (other styles remain the same) */
+
+/* Optional: Add media query for responsiveness */
+@media (max-width: 768px) {
+    .navbar-nav {
+      margin-top: 10px;
+    }
+  
+    .navbar-toggler {
+      margin-right: auto; /* Adjust the margin to remove space between the button and other elements */
+    }
+  }
+  
+  .registerButton{
+    width :20%;
+    height: 10%;
+
+
+  }
+
+  .logout-button {
+    font-size: 20px;
+    background-color: #ea7f05; /* Orange color for the button */
+    border: none;
+    border-radius: 20px; /* Adjust the value to control the roundness of the corners */
+    padding: 5px 15px; /* Adjust the padding as needed */
+    transition: background-color 0.3s ease; /* Adding transition for smooth hover effect */
+  }
+  
+  .logout-button:hover {
+    background-color: #d66800; /* Darker shade of orange for hover effect */
+  }
+  
