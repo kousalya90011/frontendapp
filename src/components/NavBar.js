@@ -5,7 +5,6 @@ import Home from '../Main/Sellerhome';
 import Orders from '../Main/Orders';
 import Sellerprofile from '../SellerPro/Sellerprofile';
 import Managemenu from './Managemenu';
-import Slogin from '../SellerPro/Slogin';
 import './NavBar.css';
 import SRegistration from '../SellerPro/SRegistration';
 import ForgotPassword from '../SellerPro/ForgotPassword';

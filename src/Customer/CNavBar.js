@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link, Routes, Route, useNavigate } from 'react-router-dom';
-import CNavBar from './CNavBar';
 import CRegistration from './CRegistration';
 import Cprofile from './Customerprofile';
 import Clogin from './Clogin';
 import Chome from './Chome';
 import Coffers from './Coffers';
-import Orders from './../Main/Orders';
 
 export default function DNavBar() {
 const navigate = useNavigate();

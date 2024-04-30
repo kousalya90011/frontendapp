@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, Routes, Route, useNavigate } from 'react-router-dom';
 import DHomePage from '../Delivery/Main/DHomePage';
 import DOrders from '../Delivery/Main/DOrders'; 
-import Dlogin from '../Delivery/componets/Dlogin';
 import DRegistration from '../Delivery/componets/DRegistration';
 import Deliveryprofile from '../Delivery/Main/Deliveryprofile';
 import './NavBar.css';
