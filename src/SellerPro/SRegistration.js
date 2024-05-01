@@ -1,79 +1,68 @@
-//SRegistration.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../components/NavBar.css'
-import config from '../config';
+import '../components/NavBar.css';
 
-export default function SRegistration() 
-{
-  //formData state variable is initialized with all required keys and empty values
+const backendUrl = 'https://backendapp-fepu.onrender.com';
+
+export default function SRegistration() {
   const [formData, setFormData] = useState({
     restuarentname: '',
     licensenumber: '',
     pannumber: '',
-    bankaccountnum:'',
+    bankaccountnum: '',
     email: '',
     password: '',
     location: '',
     contact: ''
   });
 
-  //message state variable
   const [message, setMessage] = useState('');
-  //error state variable
   const [error, setError] = useState('');
 
   const handleChange = (e) => {
-    if (e.target.type === 'file') {
-      setFormData({ ...formData, image: e.target.files[0] });
-    } else {
-      setFormData({ ...formData, [e.target.id]: e.target.value });
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`${backendUrl}/insertseller`, formData);
+      if (response.status === 200) {
+        setFormData({
+          restuarentname: '',
+          licensenumber: '',
+          pannumber: '',
+          bankaccountnum: '',
+          email: '',
+          password: '',
+          location: '',
+          contact: ''
+        });
+        setMessage('Registration successful!');
+        setError('');
+      }
+    } catch (error) {
+      if (error.response) {
+        setError(error.response.data);
+        setMessage('');
+      } else {
+        setError('An unexpected error occurred.');
+        setMessage('');
+      }
     }
   };
 
-  const handleSubmit = async (e) => 
-  {
-    e.preventDefault();
-    try 
-    {
-      const response = await axios.post(`${config.url}/insertseller`, formData);
-      if (response.status === 200) 
-      {
-        //It will set all fields to ""
-        setFormData({
-            restuarentname: '',
-            licensenumber: '',
-            pannumber: '',
-            bankaccountnum:'',
-            email: '',
-            password: '',
-            location: '',
-            contact: ''
-        });
-      }
-      setMessage(response.data);
-      setError(''); //set error to ""
-    } 
-    catch(error) 
-    {
-      setError(error.response.data);
-      setMessage(''); //set message to ""
-    }
-  };
-  
   return (
     <div className='card'>
       <h3 align="center"><u>Seller Registration</u></h3>
-      {
-        message ? <h4 align="center">{message}</h4> : <h4 align="center">{error}</h4>
-      }
+      {message && <h4 align="center">{message}</h4>}
+      {error && <h4 align="center">{error}</h4>}
 
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Restuarent Name</label>
+          <label>Restaurant Name</label>
           <input type="text" id="restuarentname" value={formData.restuarentname} onChange={handleChange} required />
-        </div>
-        <div>
         </div>
         <div>
           <label>License Number</label>

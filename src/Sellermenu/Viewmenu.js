@@ -7,7 +7,7 @@ export default function Viewmenu() {
 
   const fetchJobSeekers = async () => {
     try {
-      const response = await axios.get('http://localhost:2032/viewmenu');
+      const response = await axios.get(`${config.url}/viewmenu`);
       setJobSeekers(response.data);
     } catch (error) {
       console.error(error.message);

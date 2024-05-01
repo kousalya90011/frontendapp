@@ -9,6 +9,7 @@ import Home from './Sellerhome';
 import SRegistration from '../SellerPro/SRegistration';
 import ForgotPassword from '../SellerPro/ForgotPassword';
 import DRegistration from './../Delivery/componets/DRegistration';
+import Contact from './Contact';
 
 export default function MainNavBar({ onSellerLogin , onDeliveryLogin, onCustomerLogin}) {
   return (
@@ -45,11 +46,20 @@ export default function MainNavBar({ onSellerLogin , onDeliveryLogin, onCustomer
                 {/* <Link to="/admin">Admin Login</Link> */}
               </div>
             </li>
+
+            <li className="nav-item">
+              <Link to="contact" className="nav-link" style={{ fontSize: "20px" }}>
+                Contact
+              </Link>
+            </li>
+
           </ul>
         </div>
       </nav>
       <Routes>
         <Route path='/' element={<Home />} exact />
+        <Route path='/home' element={<Home />} exact />
+        <Route path='/contact' element={<Contact />} exact />
         <Route path='sregister' element={<SRegistration />} exact />
         <Route path='/forgotpwd' element={<ForgotPassword />} exact />
         <Route path='slogin/*' element={<Slogin onSellerLogin={onSellerLogin} />} />
